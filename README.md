@@ -4,7 +4,7 @@ Mi configuración personal de terminal: [kitty](https://sw.kovidgoyal.net/kitty/
 
 ## Capturas de pantalla
 
-![fastfetch y prompt](screenshots/fastfetch-y-prompt.webp)
+![fastfetch y prompt](screenshots/fastfetch-y-prompt.png)
 
 <!-- Agrega mas capturas a la carpeta screenshots/ y referenciarlas aqui -->
 
