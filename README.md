@@ -57,6 +57,8 @@ Si tienes HyDE y algo "no se ve" o un atajo no responde como esperas, probableme
 
 **Si los colores no coinciden con tu wallpaper:** cambiar el fondo de pantalla con una herramienta que no sea la de HyDE (por ejemplo `swww`/`hyprpaper` directo) deja la imagen visual desincronizada de lo que HyDE cree que es el tema activo, y wallbash sigue generando colores del tema viejo. Usa `hyde-shell theme.switch -s "Nombre del Tema"` (o el selector de temas de HyDE) para que wallpaper + paleta + todas las apps cambien juntos.
 
+**Cuidado con `wallpaper --set ... --global`:** la bandera `--global` regenera las miniaturas de *todos* los temas instalados a partir del wallpaper que estés aplicando, no solo del tema actual — si la usas, las tarjetas de otros temas en el selector de HyDE (`Super+Shift+T`) quedan con la miniatura equivocada. Para corregirlo, se regenera miniatura por miniatura con `hyde-shell wallpaper --cache wall "<ruta del wallpaper del tema>"` (borrando antes el archivo cacheado en `~/.cache/hyde/thumbs/` si quedó en 0 bytes).
+
 ## Características
 
 - Barra de pestañas estilo powerline, inclinada
