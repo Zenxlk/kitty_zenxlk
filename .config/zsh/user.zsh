@@ -28,6 +28,11 @@ if [[ ${HYDE_ZSH_NO_PLUGINS} != "1" ]]; then
         "fzf"
         "zsh-autosuggestions"
         "zsh-syntax-highlighting"
+        "git"
+        "extract"
+        "history-substring-search"
+        "you-should-use"
+        "colored-man-pages"
     )
 fi
 
@@ -37,3 +42,11 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*:descriptions' format '%F{magenta}-- %d --%f'
+
+#  Extras
+# zoxide: "cd" inteligente, aprende tus carpetas mas usadas (comando `z`)
+command -v zoxide >/dev/null && eval "$(zoxide init zsh)"
+
+# atuin y los alias de eza se inicializan en $ZDOTDIR/.zshrc, no aqui:
+# oh-my-zsh se carga DESPUES de este archivo (ver conf.d/hyde/terminal.zsh)
+# y pisaria el bindkey de Ctrl+R / los alias de ls si los pusieramos aqui.
