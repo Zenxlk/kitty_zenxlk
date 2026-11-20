@@ -30,9 +30,13 @@ Generado con [`fastfetch`](https://github.com/fastfetch-cli/fastfetch) (cajas po
 ```
 .config/
 ├── kitty/
-│   ├── kitty.conf          # Ajustes personales (barra de pestañas, transparencia, cursor...)
-│   ├── hyde.conf           # Ajustes base administrados por HyDE, se regeneran al cambiar el tema
-│   └── theme.conf          # Esquema de color, generado automáticamente a partir del wallpaper actual
+│   ├── kitty.conf              # Ajustes personales (barra de pestañas, transparencia, cursor...)
+│   ├── hyde.conf               # Ajustes base administrados por HyDE, se regeneran al cambiar el tema
+│   ├── theme.conf              # Esquema de color, generado automáticamente a partir del tema/wallpaper actual
+│   └── wallbash-borders.conf   # Bordes de split — generado por el template de abajo (snapshot, no editar a mano)
+├── hyde/
+│   └── wallbash/always/
+│       └── kitty-borders.dcol  # Template de wallbash: genera wallbash-borders.conf en cada cambio de tema/wallpaper
 ├── fastfetch/
 │   ├── config.jsonc        # Resumen del sistema en cajas de color con logo via protocolo gráfico
 │   └── logo/
@@ -51,13 +55,15 @@ Generado con [`fastfetch`](https://github.com/fastfetch-cli/fastfetch) (cajas po
 
 Si tienes HyDE y algo "no se ve" o un atajo no responde como esperas, probablemente esté en el archivo equivocado — revisa `~/.config/zsh/conf.d/hyde/` para ver qué carga qué y en qué orden.
 
+**Si los colores no coinciden con tu wallpaper:** cambiar el fondo de pantalla con una herramienta que no sea la de HyDE (por ejemplo `swww`/`hyprpaper` directo) deja la imagen visual desincronizada de lo que HyDE cree que es el tema activo, y wallbash sigue generando colores del tema viejo. Usa `hyde-shell theme.switch -s "Nombre del Tema"` (o el selector de temas de HyDE) para que wallpaper + paleta + todas las apps cambien juntos.
+
 ## Características
 
 - Barra de pestañas estilo powerline, inclinada
 - [Nerd Font](https://www.nerdfonts.com/) (CaskaydiaCove) para íconos/glifos en el prompt
 - Rastro de cursor animado, cursor tipo beam con parpadeo suave
 - Transparencia + blur de Hyprland en la ventana de kitty
-- Bordes de split coloreados al dividir la ventana en paneles
+- Bordes de split coloreados al dividir la ventana en paneles — 100% dinámicos vía un template propio de wallbash (`kitty-borders.dcol`), ya que kitty no permite referenciar los colores del tema directamente ahí (solo acepta hex literal)
 - Esquema de color sincronizado automáticamente con el wallpaper del escritorio vía [decaycs](https://github.com/decaycs) — fastfetch, starship, el resaltado de sintaxis, las autosugerencias y `LS_COLORS` (completado, `ls`/`eza`) usan nombres/slots de color ANSI en vez de valores fijos, así que todo cambia junto cuando cambias de wallpaper
 - `fastfetch` con el logo mostrado como imagen real (protocolo gráfico de kitty) elegido **al azar** entre lo que haya en `.config/fastfetch/logo/` — basta con dejar más PNG ahí para que el logo cambie solo; se ejecuta automáticamente al abrir una terminal nueva (vía HyDE)
 - Prompt de `starship` en bloques: usuario · directorio · rama de git (si aplica) · hora, más la duración del último comando si tardó

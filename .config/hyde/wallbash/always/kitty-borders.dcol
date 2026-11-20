@@ -1,0 +1,6 @@
+${confDir}/kitty/wallbash-borders.conf|killall -SIGUSR1 kitty 2>/dev/null
+
+# Generado por wallbash (kitty-borders.dcol) - NO editar a mano, se
+# regenera cada vez que cambias de wallpaper o de tema.
+active_border_color #<wallbash_pry4>
+inactive_border_color #<wallbash_1xa3>
