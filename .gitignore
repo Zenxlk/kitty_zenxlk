@@ -1,0 +1,4 @@
+# Imagenes de logo personales para fastfetch (arte con copyright, fan art, etc.)
+# Se quedan solo en la maquina local, no se publican en el repo.
+.config/fastfetch/logo/*
+!.config/fastfetch/logo/archlinux.png

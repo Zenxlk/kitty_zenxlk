@@ -38,8 +38,9 @@ Generado con [`fastfetch`](https://github.com/fastfetch-cli/fastfetch).
 ├── fastfetch/
 │   ├── config.jsonc     # Resumen del sistema en cajas de color con logo via protocolo gráfico
 │   └── logo/
-│       └── archlinux.png
+│       └── archlinux.png   # (las imágenes personales/con copyright se quedan solo en local, ver .gitignore)
 └── starship.toml        # Prompt de shell en bloques tipo powerline
+.zshrc                   # zsh + Oh My Zsh: autosugerencias, resaltado de sintaxis, fzf
 ```
 
 ## Características
@@ -50,8 +51,9 @@ Generado con [`fastfetch`](https://github.com/fastfetch-cli/fastfetch).
 - Transparencia + blur de Hyprland en la ventana de kitty
 - Bordes de split coloreados al dividir la ventana en paneles
 - Esquema de color sincronizado automáticamente con el wallpaper del escritorio vía [decaycs](https://github.com/decaycs) — los colores de fastfetch y starship (rojo/morado/amarillo, bloques del prompt) toman esa misma paleta dinámica en vez de valores fijos
-- `fastfetch` con el logo de Arch mostrado como imagen real (protocolo gráfico de kitty), y se ejecuta automáticamente al abrir una terminal nueva
+- `fastfetch` con el logo mostrado como imagen real (protocolo gráfico de kitty) elegido **al azar** entre lo que haya en `.config/fastfetch/logo/` — basta con dejar más PNG ahí para que el logo cambie solo; se ejecuta automáticamente al abrir una terminal nueva
 - Prompt de `starship` en bloques: usuario · directorio · hora
+- zsh con autosugerencias (`zsh-autosuggestions`), resaltado de sintaxis (`zsh-syntax-highlighting`) y completado de archivos/carpetas con menú interactivo + `fzf` (Ctrl+R historial, Ctrl+T búsqueda de archivos, `**<Tab>` para rutas)
 
 ## Instalación
 
@@ -63,12 +65,9 @@ cp kitty_zenxlk/.config/starship.toml ~/.config/
 kitty @ load-config   # o reinicia kitty
 ```
 
-Agrega esto a tu `~/.zshrc` (o el rc de tu shell) si quieres el mismo prompt y el resumen automático al abrir terminal:
+El `.zshrc` de este repo requiere `oh-my-zsh`, y los plugins `zsh-autosuggestions` y `zsh-syntax-highlighting` en `~/.oh-my-zsh/custom/plugins/`, además de `fzf` y `starship` instalados en el sistema.
 
-```bash
-eval "$(starship init zsh)"
-fastfetch
-```
+Agrega tus propios PNG a `.config/fastfetch/logo/` para que el logo de fastfetch los elija al azar — las imágenes de este repo que no sean el logo de Arch no se publican (ver `.gitignore`), así que cada quien pone las suyas.
 
 ## Licencia
 
