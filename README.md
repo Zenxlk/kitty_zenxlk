@@ -1,16 +1,16 @@
 # kitty_zenxlk
 
-My personal [kitty](https://sw.kovidgoyal.net/kitty/) terminal configuration, running on Arch Linux + [Hyprland](https://hyprland.org/) via [HyDE](https://github.com/HyDE-Project/HyDE).
+Mi configuración personal de [kitty](https://sw.kovidgoyal.net/kitty/), corriendo en Arch Linux + [Hyprland](https://hyprland.org/) usando [HyDE](https://github.com/HyDE-Project/HyDE).
 
-## Screenshots
+## Capturas de pantalla
 
 <!--
-  Add your screenshots to the screenshots/ folder and reference them below,
-  e.g.: ![preview](screenshots/preview-1.png)
+  Agrega tus capturas a la carpeta screenshots/ y referéncialas aquí,
+  ej.: ![preview](screenshots/preview-1.png)
 -->
-_Screenshots coming soon._
+_Capturas próximamente._
 
-## System info
+## Información del sistema
 
 ```
 OS: Arch Linux x86_64
@@ -22,35 +22,35 @@ Font: Cantarell (10pt) [Qt], Cantarell (10pt) [GTK2/3/4]
 Cursor: Bibata-Modern-Ice (24px)
 Terminal: kitty
 CPU: 11th Gen Intel(R) Core(TM) i5-1135G7 (8) @ 4.20 GHz
-GPU: Intel Iris Xe Graphics @ 1.30 GHz [Integrated]
+GPU: Intel Iris Xe Graphics @ 1.30 GHz [Integrada]
 ```
 
-Generated with [`fastfetch`](https://github.com/fastfetch-cli/fastfetch).
+Generado con [`fastfetch`](https://github.com/fastfetch-cli/fastfetch).
 
-## Structure
+## Estructura
 
 ```
 .config/kitty/
-├── kitty.conf   # personal overrides (tab bar, keybinds, workarounds)
-├── hyde.conf    # base settings managed by HyDE, regenerated on theme change
-└── theme.conf   # color scheme, auto-generated from the current wallpaper
+├── kitty.conf   # Ajustes personales (barra de pestañas, atajos, workarounds)
+├── hyde.conf    # Ajustes base administrados por HyDE, se regeneran al cambiar el tema
+└── theme.conf   # Esquema de color, generado automáticamente a partir del wallpaper actual
 ```
 
-## Features
+## Características
 
-- Powerline-styled, slanted tab bar
-- [Nerd Font](https://www.nerdfonts.com/) (CaskaydiaCove) for icon/glyph support in prompts
-- Animated cursor trail
-- Color scheme auto-synced to the desktop wallpaper via [decaycs](https://github.com/decaycs)
+- Barra de pestañas estilo powerline, inclinada
+- [Nerd Font](https://www.nerdfonts.com/) (CaskaydiaCove) para íconos/glifos en el prompt
+- Rastro de cursor animado
+- Esquema de color sincronizado automáticamente con el wallpaper del escritorio vía [decaycs](https://github.com/decaycs)
 
-## Install
+## Instalación
 
 ```bash
 git clone https://github.com/Zenxlk/kitty_zenxlk.git
 cp -r kitty_zenxlk/.config/kitty ~/.config/
-kitty @ load-config   # or restart kitty
+kitty @ load-config   # o reinicia kitty
 ```
 
-## License
+## Licencia
 
-Feel free to use and adapt any part of this configuration.
+Siéntete libre de usar y adaptar cualquier parte de esta configuración.
