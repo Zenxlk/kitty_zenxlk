@@ -25,23 +25,30 @@ CPU: 11th Gen Intel(R) Core(TM) i5-1135G7 (8) @ 4.20 GHz
 GPU: Intel Iris Xe Graphics @ 1.30 GHz [Integrada]
 ```
 
-Generado con [`fastfetch`](https://github.com/fastfetch-cli/fastfetch).
+Generado con [`fastfetch`](https://github.com/fastfetch-cli/fastfetch) (cajas por sección: Sistema, Escritorio, Antigüedad/Uptime, Hardware, Almacenamiento).
 
 ## Estructura
 
 ```
 .config/
 ├── kitty/
-│   ├── kitty.conf       # Ajustes personales (barra de pestañas, transparencia, cursor...)
-│   ├── hyde.conf        # Ajustes base administrados por HyDE, se regeneran al cambiar el tema
-│   └── theme.conf       # Esquema de color, generado automáticamente a partir del wallpaper actual
+│   ├── kitty.conf          # Ajustes personales (barra de pestañas, transparencia, cursor...)
+│   ├── hyde.conf           # Ajustes base administrados por HyDE, se regeneran al cambiar el tema
+│   └── theme.conf          # Esquema de color, generado automáticamente a partir del wallpaper actual
 ├── fastfetch/
-│   ├── config.jsonc     # Resumen del sistema en cajas de color con logo via protocolo gráfico
+│   ├── config.jsonc        # Resumen del sistema en cajas de color con logo via protocolo gráfico
 │   └── logo/
 │       └── archlinux.png   # (las imágenes personales/con copyright se quedan solo en local, ver .gitignore)
-└── starship.toml        # Prompt de shell en bloques tipo powerline
-.zshrc                   # zsh + Oh My Zsh: autosugerencias, resaltado de sintaxis, fzf
+├── starship/
+│   └── starship.toml       # Prompt de shell en bloques tipo powerline
+└── zsh/
+    └── user.zsh            # Plugins de oh-my-zsh y completado, vía el framework de zsh de HyDE
 ```
+
+**Nota sobre HyDE y zsh:** HyDE no usa un `~/.zshrc` plano — redirige `ZDOTDIR` a `~/.config/zsh/` y cada cosa tiene su lugar fijo:
+- Starship solo lee `~/.config/starship/starship.toml` (no `~/.config/starship.toml`).
+- Los plugins de oh-my-zsh se declaran en `~/.config/zsh/user.zsh`, no en `~/.zshrc`.
+Si tienes HyDE y algo "no se ve", probablemente esté en el archivo equivocado — revisa `~/.config/zsh/conf.d/hyde/` para ver qué carga qué.
 
 ## Características
 
@@ -50,8 +57,8 @@ Generado con [`fastfetch`](https://github.com/fastfetch-cli/fastfetch).
 - Rastro de cursor animado, cursor tipo beam con parpadeo suave
 - Transparencia + blur de Hyprland en la ventana de kitty
 - Bordes de split coloreados al dividir la ventana en paneles
-- Esquema de color sincronizado automáticamente con el wallpaper del escritorio vía [decaycs](https://github.com/decaycs) — los colores de fastfetch y starship (rojo/morado/amarillo, bloques del prompt) toman esa misma paleta dinámica en vez de valores fijos
-- `fastfetch` con el logo mostrado como imagen real (protocolo gráfico de kitty) elegido **al azar** entre lo que haya en `.config/fastfetch/logo/` — basta con dejar más PNG ahí para que el logo cambie solo; se ejecuta automáticamente al abrir una terminal nueva
+- Esquema de color sincronizado automáticamente con el wallpaper del escritorio vía [decaycs](https://github.com/decaycs) — los colores de fastfetch y starship (rojo/morado/amarillo/cian/verde, bloques del prompt) toman esa misma paleta dinámica en vez de valores fijos
+- `fastfetch` con el logo mostrado como imagen real (protocolo gráfico de kitty) elegido **al azar** entre lo que haya en `.config/fastfetch/logo/` — basta con dejar más PNG ahí para que el logo cambie solo; se ejecuta automáticamente al abrir una terminal nueva (vía HyDE)
 - Prompt de `starship` en bloques: usuario · directorio · rama de git (si aplica) · hora, más la duración del último comando si tardó
 - zsh con autosugerencias (`zsh-autosuggestions`), resaltado de sintaxis (`zsh-syntax-highlighting`) y completado de archivos/carpetas con menú interactivo + `fzf` (Ctrl+R historial, Ctrl+T búsqueda de archivos, `**<Tab>` para rutas)
 
@@ -61,11 +68,12 @@ Generado con [`fastfetch`](https://github.com/fastfetch-cli/fastfetch).
 git clone https://github.com/Zenxlk/kitty_zenxlk.git
 cp -r kitty_zenxlk/.config/kitty ~/.config/
 cp -r kitty_zenxlk/.config/fastfetch ~/.config/
-cp kitty_zenxlk/.config/starship.toml ~/.config/
+cp -r kitty_zenxlk/.config/starship ~/.config/
+cp kitty_zenxlk/.config/zsh/user.zsh ~/.config/zsh/user.zsh   # solo si usas HyDE
 kitty @ load-config   # o reinicia kitty
 ```
 
-El `.zshrc` de este repo requiere `oh-my-zsh`, y los plugins `zsh-autosuggestions` y `zsh-syntax-highlighting` en `~/.oh-my-zsh/custom/plugins/`, además de `fzf` y `starship` instalados en el sistema.
+Requiere `oh-my-zsh` con los plugins `zsh-autosuggestions` y `zsh-syntax-highlighting` en `~/.oh-my-zsh/custom/plugins/`, además de `fzf`, `jq` y `starship` instalados en el sistema.
 
 Agrega tus propios PNG a `.config/fastfetch/logo/` para que el logo de fastfetch los elija al azar — las imágenes de este repo que no sean el logo de Arch no se publican (ver `.gitignore`), así que cada quien pone las suyas.
 

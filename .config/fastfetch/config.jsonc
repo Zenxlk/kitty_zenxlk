@@ -20,7 +20,6 @@
     { "type": "kernel", "key": "│  Kernel", "format": "{2}", "keyColor": "red" },
     { "type": "packages", "key": "│  Packages", "keyColor": "red" },
     { "type": "terminal", "key": "│  Terminal", "keyColor": "red" },
-    { "type": "terminalfont", "key": "│  Terminal Font", "keyColor": "red" },
     { "type": "shell", "key": "│  Shell", "keyColor": "red" },
     { "type": "custom", "format": "\u001b[31m╰─\u001b[0m" },
 
@@ -44,9 +43,13 @@
     { "type": "chassis", "key": "│  Equipo", "format": "{2} {3}", "keyColor": "yellow" },
     { "type": "cpu", "key": "│  CPU", "format": "{1} ({3}) @ {7}", "keyColor": "yellow" },
     { "type": "gpu", "key": "│  GPU", "format": "{2}", "keyColor": "yellow" },
-    { "type": "display", "key": "│  Pantalla", "format": "{1}x{2} @ {3}Hz [{7}]", "keyColor": "yellow" },
+    {
+      "type": "command",
+      "key": "│  Pantalla",
+      "keyColor": "yellow",
+      "text": "hyprctl monitors -j | jq -r '[.[] | select(.name | startswith(\"eDP\") | not) | \"\\(.width)x\\(.height) @ \\(.refreshRate|floor)Hz [\\(.name)]\"] | if length > 0 then join(\", \") else \"ninguna (solo laptop)\" end'"
+    },
     { "type": "memory", "key": "│  Memoria", "keyColor": "yellow" },
-    { "type": "swap", "key": "│  Swap", "keyColor": "yellow" },
     { "type": "battery", "key": "│  Bateria", "keyColor": "yellow" },
     { "type": "custom", "format": "\u001b[33m╰─\u001b[0m" },
 
