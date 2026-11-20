@@ -58,7 +58,7 @@ Si tienes HyDE y algo "no se ve" o un atajo no responde como esperas, probableme
 - Rastro de cursor animado, cursor tipo beam con parpadeo suave
 - Transparencia + blur de Hyprland en la ventana de kitty
 - Bordes de split coloreados al dividir la ventana en paneles
-- Esquema de color sincronizado automáticamente con el wallpaper del escritorio vía [decaycs](https://github.com/decaycs) — los colores de fastfetch y starship (rojo/morado/amarillo/cian/verde, bloques del prompt) toman esa misma paleta dinámica en vez de valores fijos
+- Esquema de color sincronizado automáticamente con el wallpaper del escritorio vía [decaycs](https://github.com/decaycs) — fastfetch, starship, el resaltado de sintaxis, las autosugerencias y `LS_COLORS` (completado, `ls`/`eza`) usan nombres/slots de color ANSI en vez de valores fijos, así que todo cambia junto cuando cambias de wallpaper
 - `fastfetch` con el logo mostrado como imagen real (protocolo gráfico de kitty) elegido **al azar** entre lo que haya en `.config/fastfetch/logo/` — basta con dejar más PNG ahí para que el logo cambie solo; se ejecuta automáticamente al abrir una terminal nueva (vía HyDE)
 - Prompt de `starship` en bloques: usuario · directorio · rama de git (si aplica) · hora, más la duración del último comando si tardó
 - zsh con autosugerencias (`zsh-autosuggestions`), resaltado de sintaxis (`zsh-syntax-highlighting`) y completado de archivos/carpetas con menú interactivo + `fzf` (Ctrl+T búsqueda de archivos, `**<Tab>` para rutas)
