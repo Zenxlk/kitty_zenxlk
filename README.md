@@ -59,6 +59,8 @@ Si tienes HyDE y algo "no se ve" o un atajo no responde como esperas, probableme
 
 **Cuidado con `wallpaper --set ... --global`:** la bandera `--global` regenera las miniaturas de *todos* los temas instalados a partir del wallpaper que estés aplicando, no solo del tema actual — si la usas, las tarjetas de otros temas en el selector de HyDE (`Super+Shift+T`) quedan con la miniatura equivocada. Para corregirlo, se regenera miniatura por miniatura con `hyde-shell wallpaper --cache wall "<ruta del wallpaper del tema>"` (borrando antes el archivo cacheado en `~/.cache/hyde/thumbs/` si quedó en 0 bytes).
 
+**Si rofi/waybar/kitty muestran errores de "color invalido" o `<wallbash_...>` literal:** significa que el archivo `.dcol` de ese wallpaper en `~/.cache/hyde/dcols/` está vacío o no existe (común en instalaciones de HyDE donde la cache original no terminó de generarse para todos los wallpapers). Repáralo con `hyde-shell wallpaper --cache wall "<ruta del wallpaper>"` y luego `hyde-shell theme.switch -s "<Nombre del Tema>"` para aplicar los colores ya corregidos. Si tienes que regenerar varios wallpapers, hazlo de a pocos (3-5) con una pausa entre cada uno — hacerlo todo de golpe con `--cache full` puede disparar la CPU a tope por varios minutos seguidos.
+
 ## Características
 
 - Barra de pestañas estilo powerline, inclinada
