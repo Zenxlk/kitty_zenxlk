@@ -1,0 +1,46 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+# Prompt en bloques estilo "powerline". Los colores usan nombres ANSI
+# (blue/bright-black/black) en vez de hex, para seguir el esquema dinamico
+# que kitty ya aplica (theme.conf, sincronizado con el wallpaper).
+format = """
+[](fg:blue)[ 󰻀 $username ](bg:blue fg:black)[](fg:blue bg:bright-black)[ 󰉋 $directory ](bg:bright-black fg:white)[](fg:bright-black bg:black)[ $time ](bg:black fg:white)[](fg:black)
+$character"""
+
+palette = "decay"
+
+[palettes.decay]
+
+[username]
+show_always = true
+format = "[$user]($style)"
+style_user = "bg:blue fg:black"
+style_root = "bg:red fg:black"
+
+[directory]
+style = "bg:bright-black fg:white"
+format = "[$path ]($style)"
+truncation_length = 3
+truncate_to_repo = true
+truncation_symbol = "…/"
+
+[git_branch]
+symbol = ""
+style = "bg:black fg:green"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:black fg:yellow"
+format = '[$all_status$ahead_behind ]($style)'
+
+[time]
+disabled = false
+time_format = "%I:%M %p"
+style = "bg:black fg:white"
+format = '[$time]($style)'
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[➜](bold red)"
