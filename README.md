@@ -92,6 +92,14 @@ Requiere `oh-my-zsh` con los plugins `zsh-autosuggestions`, `zsh-syntax-highligh
 
 Agrega tus propios PNG a `.config/fastfetch/logo/` para que el logo de fastfetch los elija al azar — las imágenes de este repo que no sean el logo de Arch no se publican (ver `.gitignore`), así que cada quien pone las suyas.
 
+Puedes descargar imágenes en cualquier formato (jpg, png, webp...); no necesitas convertirlas tú mismo:
+
+```bash
+./scripts/convert-logos.sh ~/Downloads/*.jpg
+```
+
+Esto las convierte a PNG, las redimensiona (600px por defecto) y las deja listas en `.config/fastfetch/logo/`. Preferir imágenes cuadradas o casi cuadradas — una muy panorámica se ve distorsionada junto a las cajas de info.
+
 ## Licencia
 
 Siéntete libre de usar y adaptar cualquier parte de esta configuración.
