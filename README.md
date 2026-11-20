@@ -52,7 +52,7 @@ Generado con [`fastfetch`](https://github.com/fastfetch-cli/fastfetch).
 - Bordes de split coloreados al dividir la ventana en paneles
 - Esquema de color sincronizado automáticamente con el wallpaper del escritorio vía [decaycs](https://github.com/decaycs) — los colores de fastfetch y starship (rojo/morado/amarillo, bloques del prompt) toman esa misma paleta dinámica en vez de valores fijos
 - `fastfetch` con el logo mostrado como imagen real (protocolo gráfico de kitty) elegido **al azar** entre lo que haya en `.config/fastfetch/logo/` — basta con dejar más PNG ahí para que el logo cambie solo; se ejecuta automáticamente al abrir una terminal nueva
-- Prompt de `starship` en bloques: usuario · directorio · hora
+- Prompt de `starship` en bloques: usuario · directorio · rama de git (si aplica) · hora, más la duración del último comando si tardó
 - zsh con autosugerencias (`zsh-autosuggestions`), resaltado de sintaxis (`zsh-syntax-highlighting`) y completado de archivos/carpetas con menú interactivo + `fzf` (Ctrl+R historial, Ctrl+T búsqueda de archivos, `**<Tab>` para rutas)
 
 ## Instalación
