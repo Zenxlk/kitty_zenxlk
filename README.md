@@ -23,7 +23,7 @@ CPU: 11th Gen Intel(R) Core(TM) i5-1135G7 (8) @ 4.20 GHz
 GPU: Intel Iris Xe Graphics @ 1.30 GHz [Integrada]
 ```
 
-Generado con [`fastfetch`](https://github.com/fastfetch-cli/fastfetch) (cajas por sección: Sistema, Escritorio, Antigüedad/Uptime, Hardware, Almacenamiento).
+Generado con [`fastfetch`](https://github.com/fastfetch-cli/fastfetch) (cajas por sección: Sistema, Escritorio, Hardware, Almacenamiento).
 
 ## Estructura
 
