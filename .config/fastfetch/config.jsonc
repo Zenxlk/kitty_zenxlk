@@ -20,8 +20,6 @@
     { "type": "kernel", "key": "  Kernel", "format": "{2}", "keyColor": "red" },
     { "type": "uptime", "key": "  Uptime", "keyColor": "red" },
 
-    "break",
-
     // --- Grupo morado: entorno de shell --------------------------------
     {
       "type": "custom",
@@ -30,8 +28,6 @@
     { "type": "wm", "key": "  WM", "format": "{2}", "keyColor": "magenta" },
     { "type": "packages", "key": "  Packages", "keyColor": "magenta" },
     { "type": "shell", "key": "  Shell", "keyColor": "magenta" },
-
-    "break",
 
     // --- Grupo amarillo: hardware --------------------------------------
     {
@@ -42,7 +38,6 @@
     { "type": "gpu", "key": "  GPU", "format": "{2}", "keyColor": "yellow" },
     { "type": "memory", "key": "  Memory", "keyColor": "yellow" },
 
-    "break",
     {
       "type": "colors",
       "paddingLeft": 2,
