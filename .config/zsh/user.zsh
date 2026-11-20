@@ -36,6 +36,12 @@ if [[ ${HYDE_ZSH_NO_PLUGINS} != "1" ]]; then
     )
 fi
 
+# Colores dinamicos: LS_COLORS usa codigos ANSI basicos (0-15), los mismos
+# 16 "slots" de color que kitty ya redefine segun el wallpaper (theme.conf).
+# Sin esto, LS_COLORS queda vacio y ni el completado ni `eza`/`ls` tienen
+# nada dinamico que seguir.
+command -v dircolors >/dev/null && eval "$(dircolors)"
+
 # Completado: menu interactivo navegable, insensible a mayusculas/minusculas,
 # con los mismos colores que usa `ls`.
 zstyle ':completion:*' menu select
