@@ -5,7 +5,7 @@
   "logo": {
     "source": "\"$(hyde-shell fastfetch logo --local)\"",
     "type": "kitty",
-    "height": 28
+    "height": 22
   },
   "display": {
     "separator": "  "
@@ -17,40 +17,20 @@
     // --- Sistema (rojo) -------------------------------------------------
     { "type": "custom", "format": "\u001b[31m── Sistema ──────────────────\u001b[0m" },
     { "type": "os", "key": "│  OS", "format": "{3}", "keyColor": "red" },
-    { "type": "kernel", "key": "│  Kernel", "format": "{2}", "keyColor": "red" },
-    { "type": "packages", "key": "│  Packages", "keyColor": "red" },
     { "type": "terminal", "key": "│  Terminal", "keyColor": "red" },
     { "type": "shell", "key": "│  Shell", "keyColor": "red" },
     { "type": "custom", "format": "\u001b[31m╰─\u001b[0m" },
 
     // --- Escritorio (morado) ---------------------------------------------
     { "type": "custom", "format": "\u001b[35m── Escritorio ───────────────\u001b[0m" },
-    { "type": "lm", "key": "│  Display Manager", "format": "{2} {3}", "keyColor": "magenta" },
     { "type": "wm", "key": "│  Window Manager", "format": "{2} ({3})", "keyColor": "magenta" },
-    { "type": "theme", "key": "│  Theme", "keyColor": "magenta" },
-    { "type": "icons", "key": "│  Icons", "keyColor": "magenta" },
-    { "type": "font", "key": "│  Font", "keyColor": "magenta" },
     { "type": "custom", "format": "\u001b[35m╰─\u001b[0m" },
-
-    // --- Antiguedad / Uptime (cyan) --------------------------------------
-    { "type": "custom", "format": "\u001b[36m── Antiguedad / Uptime ──────\u001b[0m" },
-    { "type": "disk", "key": "│  OS Age", "folders": "/", "format": "{days} dias", "keyColor": "cyan" },
-    { "type": "uptime", "key": "│  Uptime", "keyColor": "cyan" },
-    { "type": "custom", "format": "\u001b[36m╰─\u001b[0m" },
 
     // --- Hardware (amarillo) ---------------------------------------------
     { "type": "custom", "format": "\u001b[33m── Hardware ─────────────────\u001b[0m" },
-    { "type": "chassis", "key": "│  Equipo", "format": "{2} {3}", "keyColor": "yellow" },
     { "type": "cpu", "key": "│  CPU", "format": "{1} ({3}) @ {7}", "keyColor": "yellow" },
     { "type": "gpu", "key": "│  GPU", "format": "{2}", "keyColor": "yellow" },
-    {
-      "type": "command",
-      "key": "│  Pantalla",
-      "keyColor": "yellow",
-      "text": "hyprctl monitors -j | jq -r '[.[] | select(.name | startswith(\"eDP\") | not) | \"\\(.width)x\\(.height) @ \\(.refreshRate|floor)Hz [\\(.name)]\"] | if length > 0 then join(\", \") else \"ninguna (solo laptop)\" end'"
-    },
     { "type": "memory", "key": "│  Memoria", "keyColor": "yellow" },
-    { "type": "battery", "key": "│  Bateria", "keyColor": "yellow" },
     { "type": "custom", "format": "\u001b[33m╰─\u001b[0m" },
 
     // --- Almacenamiento (verde) -------------------------------------------
