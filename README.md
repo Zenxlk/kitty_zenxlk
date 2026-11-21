@@ -61,6 +61,10 @@ Si tienes HyDE y algo "no se ve" o un atajo no responde como esperas, probableme
 
 **Si rofi/waybar/kitty muestran errores de "color invalido" o `<wallbash_...>` literal:** significa que el archivo `.dcol` de ese wallpaper en `~/.cache/hyde/dcols/` está vacío o no existe (común en instalaciones de HyDE donde la cache original no terminó de generarse para todos los wallpapers). Repáralo con `hyde-shell wallpaper --cache wall "<ruta del wallpaper>"` y luego `hyde-shell theme.switch -s "<Nombre del Tema>"` para aplicar los colores ya corregidos. Si tienes que regenerar varios wallpapers, hazlo de a pocos (3-5) con una pausa entre cada uno — hacerlo todo de golpe con `--cache full` puede disparar la CPU a tope por varios minutos seguidos.
 
+**Notas sobre `starship.toml`:**
+- starship no reconoce el nombre de color `magenta` (se queda callado y solo ignora ese estilo) — usa `purple`.
+- Evita `bg:black` / `bg:bright-black` como fondo de una "pildora": en un tema oscuro casi no contrasta contra el fondo de la terminal y la cápsula se vuelve invisible aunque el estilo esté bien aplicado.
+
 ## Características
 
 - Barra de pestañas estilo powerline, inclinada

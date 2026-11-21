@@ -4,11 +4,12 @@ add_newline = true
 
 # Prompt en "pildoras" separadas (cada segmento con su propio borde
 # redondeado), en vez de una barra continua estilo powerline. Los colores
-# usan nombres ANSI (blue/bright-black/black/green) en vez de hex, para
+# usan nombres ANSI vivos (blue/purple/green/yellow) en vez de hex, para
 # seguir el esquema dinamico que kitty ya aplica (theme.conf, sincronizado
-# con el wallpaper).
+# con el wallpaper) -- se evitan black/bright-black como fondo de pildora
+# porque en temas oscuros casi no contrastan contra el fondo de la terminal.
 format = """
-[](fg:blue)[  $username ](bg:blue fg:black)[]( fg:blue) $directory$git_branch$time $cmd_duration
+[](fg:blue)[  $username ](bg:blue fg:black)[]( fg:blue) $directory$git_branch$time $cmd_duration
 $character"""
 
 [username]
@@ -18,7 +19,7 @@ style_user = "bg:blue fg:black"
 style_root = "bg:red fg:black"
 
 [directory]
-format = "[](fg:bright-black)[  $path ](bg:bright-black fg:white)[]( fg:bright-black)"
+format = "[](fg:purple)[  $path ](bg:purple fg:black)[]( fg:purple)"
 truncation_length = 3
 truncate_to_repo = true
 truncation_symbol = "…/"
@@ -26,8 +27,8 @@ truncation_symbol = "…/"
 # Rama actual (y estado: cambios sin commitear, ahead/behind) solo se
 # muestra dentro de un repositorio git.
 [git_branch]
-symbol = ""
-format = "[](fg:green)[ $symbol $branch ](bg:green fg:black)[]( fg:green)"
+symbol = ""
+format = "[](fg:green)[ $symbol $branch ](bg:green fg:black)[]( fg:green)"
 
 [git_status]
 format = "[ $all_status$ahead_behind](bg:green fg:black)"
@@ -35,7 +36,7 @@ format = "[ $all_status$ahead_behind](bg:green fg:black)"
 [time]
 disabled = false
 time_format = "%I:%M %p"
-format = "[](fg:black)[  $time ](bg:black fg:white)[]( fg:black)"
+format = "[](fg:yellow)[  $time ](bg:yellow fg:black)[]( fg:yellow)"
 
 # Ejemplo adicional: muestra cuanto tardo el ultimo comando si fue "lento".
 [cmd_duration]
